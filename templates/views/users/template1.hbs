@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
+
+    <!-- Main css -->
+    {{!-- <link rel="stylesheet" href="../css/style.css"> --}}
+    {{!-- <link rel="stylesheet" href="../css/bootstrap.css"> --}}
+<title>Pricing Template</title>
+<style>
+    body {
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        background-color: white;
+    }
+    .navbar {
+        background-color: rgb(255, 255, 255);
+        color: black;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-right: 30px;
+    }
+    .nav-links {
+        display: flex;
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        color: black;
+    }
+    .nav-links li {
+        margin-right: 20px;
+        color: black;
+    }
+     .nav-links li a {
+        color: #2C2C54;
+        text-decoration: none;
+        font-weight: 550;
+        padding-left: 20px;
+    }
+
+    .nav-links li a:hover {
+        color: rgb(96, 96, 96);
+    }
+
+    .container {
+        display: flex;
+        flex: 1;
+        margin-top: 0px;
+        margin-bottom: 40px;
+        margin-left: 40px;
+        margin-right: 40px;
+        border-radius: 20px 20px;
+        overflow: hidden;
+    }
+.left-panel {
+    width: 270px;
+    padding: 20px;
+    border-radius: 20px 0px 0px 20px;
+    background-color:  #a2a8d3;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    
+}
+.left-panel h3{
+    color: black;
+    text-align: center;
+
+}
+
+.options {
+    margin-bottom: 20px;
+}
+
+.option {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.option label {
+    width: 140px;
+    margin-right: 10px;
+    color: black;
+}
+
+.option input,
+.option select {
+    flex: 1;
+    width: 100%;
+    border-radius: 5px;
+}
+
+.option:last-child {
+    margin-bottom: 0;
+}
+ .right-panel {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        background-color: #2C2C54;
+        border-radius: 0px 20px 20px 0px;
+    }
+    .pricing-table {
+        border: 1px solid #2C2C54;
+        border-radius: 20px;
+        padding: 20px;
+        text-align: center;
+        width: 270px;
+        height: 450px;
+        margin-top: -10%;
+        color: #2C2C54;
+        background-color: white;
+        margin-top: 5px;
+        margin-left: 30px;
+    }
+
+
+    .pricing-table h2:hover {
+        text-decoration: underline;
+    }
+  .pricing-table img {
+        width: 150px;
+        height: 150px;
+        border-radius: 10px;
+        margin-bottom: 10px;
+    }
+    .centered-button {
+        margin: 20px auto;
+        margin-right: 20px;
+    }
+
+    .editable {
+        cursor: text;
+        border-bottom: 1px dashed #ccc; /* Add a dashed border to indicate the editable area */
+    }
+
+    .editable:hover {
+        background-color: #f9f9f9; /* Change background color on hover */
+    }
+
+    .icon-text-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 15px;
+            border-bottom: 1px dashed #ccc; /* Add a dashed border to indicate the editable area */
+
+        }
+  .icon-text-icon i {
+            margin-right: 10px;
+        }
+
+        /* Dropdown Button */
+.dropbtn {
+  background-color: transparent;
+  color: inherit;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 120px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.4);
+  border-radius: 10px;
+  z-index: 1;
+  margin-top: 10px;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: white;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+
+}
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: rgb(218, 218, 218);
+  color: black;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.btn-danger {
+  --bs-btn-color: #fff;
+  --bs-btn-bg: #e74c3c;
+  --bs-btn-border-color: #e74c3c;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #c44133;
+  --bs-btn-hover-border-color: #b93d30;
+  --bs-btn-focus-shadow-rgb: 235, 103, 89;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #b93d30;
+  --bs-btn-active-border-color: #ad392d;
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #fff;
+  --bs-btn-disabled-bg: #e74c3c;
+  --bs-btn-disabled-border-color: #e74c3c;
+}
+
+.btn-check[disabled] + .btn, .btn-check:disabled + .btn {
+  pointer-events: none;
+  filter: none;
+  opacity: 0.65;
+}
+.add-feature{
+    border:none; 
+    border-radius: 5px; 
+    color:white; 
+    background-color:#2C2C54;
+    width: 50px;
+    font-size: 20px;
+    height: 40px;
+    margin-right: 55px;
+}
+
+.centered-button{
+    border:none; 
+    border-radius: 5px; 
+    padding: 5px 5px 5px 5px; 
+    color:white; 
+    background-color:#2C2C54;
+    width: 100px;
+    height: 40px;
+    font-weight: bold;
+}
+.lbutton{
+    color: white; 
+    background-color:#2C2C54; 
+    border-radius: 5px; 
+    width:80px; 
+    height: 35px;
+    border: none;
+    font-weight: bold;
+}
+
+
+</style>
+
+
+</head>
+<body>
+
+<div class="navbar">
+    <h1 style="color: #2C2C54; margin-left:60px;">The Pricifiers</h1>
+    <ul class="nav-links">
+        <li><a href="/users/dashboard">Home</a></li>
+        <li><a href="/users/template1">Features</a></li>
+        <li><a href="/users/pricing">Plans</a></li>
+        <li><a href="/users/about">About</a></li>
+        
+        {{!-- <li><a href="/users/contact">Contact</a></li> --}}
+        <li class="dropdown">
+            <a href="#" class="dropbtn">Templates</a>
+            <div class="dropdown-content">
+                <a href="http://localhost:9001">Template 1</a>
+                <a href="/users/template1">Template 2</a>
+                <a href="/users/template1">Template 3</a>
+            </div>
+        </li>
+        {{!-- <li>
+            <form action="/users/dashboard" class="d-flex" method="get">
+                <button class="lbutton" type="submit">Log Out</button>
+            </form>
+        </li> --}}
+    </ul>
+</div>
+
+
+<div class="container">
+    <div class="left-panel">
+        <div class="options">
+            <h3>BASIC</h3>
+            <div class="option">
+                <label for="color">Color 1</label>
+                <input type="color" id="t1color1" value="#2C2C54">
+            </div>
+            <div class="option">
+                <label for="color">Color 2</label>
+                <input type="color" id="t1color2" value="#2C2C54">
+            </div>
+            <div class="option">
+                <label for="heading">Title</label>
+                <input type="text" id="t1heading" value="BASIC">
+            </div>
+            <div class="option">
+                <label for="size">Font Size</label>
+                <select id="t1size">
+                    <option value="small">Small</option>
+                    <option value="medium" selected>Medium</option>
+                    <option value="large">Large</option>
+                </select>
+            </div>
+            <div class="option">
+                <label for="photo">Image URL</label>
+                <input type="text" id="t1photo" value="https://i.pinimg.com/236x/4c/fe/63/4cfe63bc2144516f913fcf9a94b0fc26.jpg">
+            </div>
+            {{!-- <div class="option">
+                <label for="t1-button-text">Button Text:</label>
+                <input type="text" id="t1-button-text" value="Buy Now">
+            </div>
+            <div class="option">
+                <label for="t1-button-link">Button Link:</label>
+                <input type="text" id="t1-button-link" value="#">
+            </div> --}}
+        </div>
+
+        <div class="options">
+            <h3>ADVANCE</h3>
+
+            <div class="option">
+                <label for="color"> Color 1</label>
+                <input type="color" id="t2color1" value="#2C2C54">
+            </div>
+            <div class="option">
+                <label for="color"> Color 2</label>
+                <input type="color" id="t2color2" value="#2C2C54">
+            </div>
+            <div class="option">
+                <label for="heading">Title</label>
+                <input type="text" id="t2heading" value="ADVANCE">
+            </div>
+            <div class="option">
+                <label for="size">Font Size</label>
+                <select id="t2size">
+                    <option value="small">Small</option>
+                    <option value="medium" selected>Medium</option>
+                    <option value="large">Large</option>
+                </select>
+            </div>
+            <div class="option">
+                <label for="photo">Image URL</label>
+                <input type="text" id="t2photo" value="https://i.pinimg.com/236x/4c/fe/63/4cfe63bc2144516f913fcf9a94b0fc26.jpg">
+            </div>
+        </div>
+
+        <div class="options">
+            <h3>PREMIUM</h3>
+
+            <div class="option">
+                <label for="color"> Color 1</label>
+                <input type="color" id="t3color1" value="#2C2C54">
+            </div>
+            <div class="option">
+                <label for="color"> Color 2</label>
+                <input type="color" id="t3color2" value="#2C2C54">
+            </div>
+            <div class="option">
+                <label for="heading">Title</label>
+                <input type="text" id="t3heading" value="PREMIUM">
+            </div>
+            <div class="option">
+                <label for="size">Font Size</label>
+                <select id="t3size">
+                    <option value="small">Small</option>
+                    <option value="medium" selected>Medium</option>
+                    <option value="large">Large</option>
+                </select>
+            </div>
+            <div class="option">
+                <label for="photo">Image URL</label>
+                <input type="text" id="t3photo" value="https://i.pinimg.com/236x/4c/fe/63/4cfe63bc2144516f913fcf9a94b0fc26.jpg">
+            </div>
+        </div>
+    </div>
+
+    <div class="right-panel">
+        <div class="pricing-table" id="pricing-table-1">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZGyPsRIT6Lq1qCYfa9pAi3O6eNJxg3UuN5A&s" alt="Product Image">
+            <h2>BASIC</h2>
+            <p>$20/month</p>
+           <div class="icon-text-icon">
+                <i class="fas fa-check-circle" style="color: grey;"></i>
+                <span contenteditable="true">Your Features</span>
+                <i style="margin-left: 10px; color:#ad392d" class="fas fa-trash"></i>
+            </div>
+           <div class="icon-text-icon">
+                <i class="fas fa-check-circle" style="color: grey;"></i>
+                <span contenteditable="true">Your Features</span>
+                <i style="margin-left: 10px; color:#ad392d" class="fas fa-trash"></i>
+            </div>
+            <div class="icon-text-icon">
+                <i class="fas fa-check-circle" style="color: grey;"></i>
+                <span contenteditable="true">Your Features</span>
+                <i style="margin-left: 10px; color:#ad392d" class="fas fa-trash"></i>
+            </div>
+            <button class="add-feature">+</button> <!-- Button to add a new editable paragraph -->
+            <button class="centered-button">Buy Now</button>
+        </div>
+        <div class="pricing-table" id="pricing-table-2">
+            <img src="data:image/jpeg;base64,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" alt="Product Image">
+            <h2>ADVANCE</h2>
+            <p>$40/month</p>
+            <div class="icon-text-icon">
+                <i class="fas fa-check-circle" style="color: grey;"></i>
+                <span contenteditable="true">Your Features</span>
+                <i style="margin-left: 10px; color:#ad392d" class="fas fa-trash"></i>
+            </div>
+            <div class="icon-text-icon">
+                <i class="fas fa-check-circle" style="color: grey;"></i>
+                <span contenteditable="true">Your Features</span>
+                <i style="margin-left: 10px; color:#ad392d" class="fas fa-trash"></i>
+            </div>
+           <div class="icon-text-icon">
+                <i class="fas fa-check-circle" style="color: grey;"></i>
+                <span contenteditable="true">Your Features</span>
+                <i style="margin-left: 10px; color:#ad392d" class="fas fa-trash"></i>
+            </div>  
+            <button class="add-feature">+</button> <!-- Button to add a new editable paragraph -->
+            <button class="centered-button">Buy Now</button>
+        </div>
+        
+        <div class="pricing-table" id="pricing-table-3">
+            <img src="data:image/jpeg;base64,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" alt="Product Image">
+            <h2>PREMIUM</h2>
+            <p>$50/month</p>
+           <div class="icon-text-icon">
+                <i class="fas fa-check-circle" style="color: grey;"></i>
+                <span contenteditable="true">Your Features</span>
+                <i style="margin-left: 10px; color:#ad392d" class="fas fa-trash"></i>
+            </div>
+           <div class="icon-text-icon">
+                <i class="fas fa-check-circle" style="color: grey;"></i>
+                <span contenteditable="true">Your Features</span>
+                <i style="margin-left: 10px; color:#ad392d" class="fas fa-trash"></i>
+            </div>
+           <div class="icon-text-icon">
+                <i class="fas fa-check-circle" style="color: grey;"></i>
+                <span contenteditable="true">Your Features</span>
+                <i style="margin-left: 10px; color:#ad392d" class="fas fa-trash"></i>
+            </div> 
+            <button class="add-feature">+</button> <!-- Button to add a new editable paragraph -->
+            <button class="centered-button">Buy Now</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    const t1color1Input = document.getElementById('t1color1');
+    const t1color2Input = document.getElementById('t1color2');
+    const t1headingInput = document.getElementById('t1heading');
+    const t1sizeSelect = document.getElementById('t1size');
+    const t1photoInput = document.getElementById('t1photo');
+
+    const t2color1Input = document.getElementById('t2color1');
+    const t2color2Input = document.getElementById('t2color2');
+    const t2headingInput = document.getElementById('t2heading');
+    const t2sizeSelect = document.getElementById('t2size');
+    const t2photoInput = document.getElementById('t2photo');
+
+    const t3color1Input = document.getElementById('t3color1');
+    const t3color2Input = document.getElementById('t3color2');
+    const t3headingInput = document.getElementById('t3heading');
+    const t3sizeSelect = document.getElementById('t3size');
+    const t3photoInput = document.getElementById('t3photo');
+
+    const table1 = document.getElementById('pricing-table-1');
+    const table2 = document.getElementById('pricing-table-2');
+    const table3 = document.getElementById('pricing-table-3');
+
+    const pricingTables = document.querySelectorAll('.pricing-table');
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const addButton = document.querySelector('.add-feature');
+        const pricingTable = document.getElementById('pricing-table-1');
+
+        addButton.addEventListener('click', function() {
+            // Create a new icon-text-icon div
+            const newIconTextIconDiv = document.createElement('div');
+            newIconTextIconDiv.classList.add('icon-text-icon');
+
+            // Create the check circle icon
+            const checkCircleIcon = document.createElement('i');
+            checkCircleIcon.classList.add('fas', 'fa-check-circle');
+
+            // Create the editable span
+            const editableSpan = document.createElement('span');
+            editableSpan.setAttribute('contenteditable', 'true');
+            editableSpan.textContent = 'Includes all features';
+
+            // Create the trash icon
+            const trashIcon = document.createElement('i');
+            trashIcon.classList.add('fas', 'fa-trash');
+            trashIcon.style.marginLeft = '10px';
+
+            // Append elements to the new icon-text-icon div
+            newIconTextIconDiv.appendChild(checkCircleIcon);
+            newIconTextIconDiv.appendChild(editableSpan);
+            newIconTextIconDiv.appendChild(trashIcon);
+
+            // Insert the new icon-text-icon div before the add button
+            pricingTable.insertBefore(newIconTextIconDiv, addButton);
+        });
+    });
+
+    // Function to generate gradient CSS property
+    function generateGradient(color1, color2) {
+        return `linear-gradient(to bottom right, ${color1}, ${color2})`;
+    }
+
+    t1color1Input.addEventListener('input', () => {
+        pricingTables.forEach(table => {
+            const color1 = t1color1Input.value;
+            const color2 = t1color2Input.value;
+            table1.style.background = generateGradient(color1, color2);
+        });
+    });
+
+    t1color2Input.addEventListener('input', () => {
+        pricingTables.forEach(table => {
+            const color1 = t1color1Input.value;
+            const color2 = t1color2Input.value;
+            table1.style.background = generateGradient(color1, color2);
+        });
+    });
+
+    t2color1Input.addEventListener('input', () => {
+        pricingTables.forEach(table => {
+            const color1 = t2color1Input.value;
+            const color2 = t2color2Input.value;
+            table2.style.background = generateGradient(color1, color2);
+        });
+    });
+
+    t2color2Input.addEventListener('input', () => {
+        pricingTables.forEach(table => {
+            const color1 = t2color1Input.value;
+            const color2 = t2color2Input.value;
+            table2.style.background = generateGradient(color1, color2);
+        });
+    });
+
+    t3color1Input.addEventListener('input', () => {
+        pricingTables.forEach(table => {
+            const color1 = t3color1Input.value;
+            const color2 = t3color2Input.value;
+            table3.style.background = generateGradient(color1, color2);
+        });
+    });
+
+    t3color2Input.addEventListener('input', () => {
+        pricingTables.forEach(table => {
+            const color1 = t3color1Input.value;
+            const color2 = t3color2Input.value;
+            table3.style.background = generateGradient(color1, color2);
+        });
+    });
+
+    t1headingInput.addEventListener('input', () => {
+        pricingTables.forEach(table => {
+            table1.querySelector('h2').innerText = t1headingInput.value;
+        });
+    });
+
+    t2headingInput.addEventListener('input', () => {
+        pricingTables.forEach(table => {
+            table2.querySelector('h2').innerText = t2headingInput.value;
+        });
+    });
+
+    t3headingInput.addEventListener('input', () => {
+        pricingTables.forEach(table => {
+            table3.querySelector('h2').innerText = t3headingInput.value;
+        });
+    });
+
+    t1ButtonTextInput.addEventListener('input', () => {
+        t1Button.innerText = t1ButtonTextInput.value;
+    });
+
+    t1ButtonLinkInput.addEventListener('input', () => {
+        t1Button.href = t1ButtonLinkInput.value;
+    });
+
+    t2ButtonTextInput.addEventListener('input', () => {
+        t2Button.innerText = t2ButtonTextInput.value;
+    });
+
+    t2ButtonLinkInput.addEventListener('input', () => {
+        t2Button.href = t2ButtonLinkInput.value;
+    });
+
+    t3ButtonTextInput.addEventListener('input', () => {
+        t3Button.innerText = t3ButtonTextInput.value;
+    });
+
+    t3ButtonLinkInput.addEventListener('input', () => {
+        t3Button.href = t3ButtonLinkInput.value;
+    });
+
+    sizeSelect.addEventListener('change', () => {
+        pricingTables.forEach(table => {
+            table.style.fontSize = sizeSelect.value;
+        });
+    });
+
+    photoInput.addEventListener('input', () => {
+        pricingTables.forEach(table => {
+            const image = table.querySelector('img');
+            image.src = photoInput.value;
+        });
+    });
+
+    window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.style.display === "block") {
+        openDropdown.style.display = "none";
+      }
+    }
+  }
+}
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Product Templates</title>
+</head>
+<body>
+
+<div id="productTemplates"></div>
+<button onclick="generateScript()">Generate Script</button>
+
+<script>
+  function createProductTemplate(title, price, features, gradientColor, imageUrl) {
+    const container = document.createElement('div');
+    container.style.width = '350px';
+    container.style.background = gradientColor;
+    
+    // Add image if selected
+    if (imageUrl) {
+      const img = document.createElement('img');
+      img.src = imageUrl;
+      img.alt = 'Template Image';
+      img.style.width = '100%';
+      img.style.height = 'auto';
+      container.appendChild(img);
+    }
+    
+    // Add title and price
+    const titleElement = document.createElement('h2');
+    titleElement.style.textAlign = 'center';
+    titleElement.textContent = title;
+    container.appendChild(titleElement);
+    
+    const priceElement = document.createElement('h2');
+    priceElement.style.textAlign = 'center';
+    priceElement.textContent = price;
+    container.appendChild(priceElement);
+    
+    // Add features
+    features.forEach(featureText => {
+      const featureElement = document.createElement('h2');
+      featureElement.style.textAlign = 'center';
+      featureElement.textContent = featureText;
+      container.appendChild(featureElement);
+    });
+    
+    document.getElementById('productTemplates').appendChild(container);
+  }
+
+  function generateScript() {
+    const scriptText = `
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Product Templates</title>
+</head>
+<body>
+
+<div id="productTemplates"></div>
+
+<script>
+  function createProductTemplate(title, price, features, gradientColor, imageUrl) {
+    const container = document.createElement('div');
+    container.style.width = '350px';
+    container.style.background = gradientColor;
+    
+    // Add image if selected
+    if (imageUrl) {
+      const img = document.createElement('img');
+      img.src = imageUrl;
+      img.alt = 'Template Image';
+      img.style.width = '100%';
+      img.style.height = 'auto';
+      container.appendChild(img);
+    }
+    
+    // Add title and price
+    const titleElement = document.createElement('h2');
+    titleElement.style.textAlign = 'center';
+    titleElement.textContent = title;
+    container.appendChild(titleElement);
+    
+    const priceElement = document.createElement('h2');
+    priceElement.style.textAlign = 'center';
+    priceElement.textContent = price;
+    container.appendChild(priceElement);
+    
+    // Add features
+    features.forEach(featureText => {
+      const featureElement = document.createElement('h2');
+      featureElement.style.textAlign = 'center';
+      featureElement.textContent = featureText;
+      container.appendChild(featureElement);
+    });
+    
+    document.getElementById('productTemplates').appendChild(container);
+  }
+
+  // Create templates
+  createProductTemplate(
+    'BASIC',
+    '$25',
+    ['5 GB Space', '5 Email Address', 'No Live Support'],
+    'linear-gradient(-45deg,#35546d,#35546d)',
+    'https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg?w=1060&t=st=1710317931~exp=1710318531~hmac=ab0111dadc71484ae748827ad12df06cc63f944c5583db11b001423b06ebac89'
+  );
+
+  createProductTemplate(
+    'ADVANCE',
+    '$30',
+    ['10 GB Space', '10 Email Address', 'Email Support Only'],
+    'linear-gradient(-45deg,#773143,#773143)',
+    'https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg?w=1060&t=st=1710317931~exp=1710318531~hmac=ab0111dadc71484ae748827ad12df06cc63f944c5583db11b001423b06ebac89'
+  );
+
+  createProductTemplate(
+    'PREMIUM',
+    '$20',
+    ['15 GB Space', '10 Domain Name', '20 Email Address', '24/7 Live Support'],
+    'linear-gradient(-45deg,#7b4874,#7b4874)',
+    'https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg?w=1060&t=st=1710317931~exp=1710318531~hmac=ab0111dadc71484ae748827ad12df06cc63f944c5583db11b001423b06ebac89'
+  );
+</script>
+
+</body>
+</html>`;
+    console.log(scriptText); // You can copy the scriptText from the console or use it in any other way you prefer.
+  }
+</script>
+
+</body>
+</html>

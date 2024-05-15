@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sign In</title>
+
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="../css/style.css">
+
+    <style>
+        body{
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        background-color: white;
+        }
+              .navbar {
+             /* Set background color to white */
+            color: white; /* Set font color to #2C2C54 */
+            justify-content: flex-end; /* Align items to the right */
+            margin-right: 5px;
+            display: flex; /* Use flexbox */
+            font-size: 15px;
+            font-weight: bold;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+                .navbar-collapse {
+    margin-left: 50%;
+    font-weight: 550;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 16px;
+}
+
+        .navbar-toggler {
+            order: -1; /* Move the toggler to the left side */
+        }
+
+        .navbar-nav {
+            display: flex; /* Use flexbox */
+            list-style: none; /* Remove default list styles */
+        }
+
+        .navbar-nav .nav-item {
+            margin-right: 15px; /* Add space between navigation items */
+        }
+
+        .navbar-nav .nav-link {
+            padding-right: 20px; /* Add right padding to each navigation link */
+            text-decoration: none;
+        }
+        .header {
+            background-color: #2C2C54;
+            display: flex;
+            align-items: center;
+            margin-left: 5%;
+            margin-right: auto;
+           
+        }
+
+        .header h2 {
+            color: white;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        .main{
+          margin-top: 1%;
+          height: 50%;
+          width: 94%;
+         
+        }
+
+#home {
+    width: 100%;
+    padding: 3rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.home-left {
+    height: 300px;
+    position: relative;
+    margin-left: -1%;
+}
+
+.home-left img {
+    height: 100%;
+    border-radius: 10px;
+}
+
+.home-right {
+    width: 50%;
+     margin-right: 5%;
+    text-align: justify;
+}
+
+.home-heading {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.home-para {
+    margin-bottom: 18px;
+    margin-right: 10%;
+    font-size: 20px;
+    text-align: justify ;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.btn {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    position: relative;
+    width: 30px;
+    background-color: #a2a8d3;
+    border-radius: 5px;
+}
+
+.btn:hover::after {
+    content: '';
+    height: 4px;
+    position: absolute;
+    background-color: white;
+    left: 0;
+    bottom: -10px;
+    animation: width;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    border-radius: 5px;
+}
+
+@keyframes width {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 100%;
+    }
+}
+
+.pricing-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 5%;
+            margin-right: 20px;
+            margin-left: 2%;
+            width: 95%;
+            margin-bottom: 5%;
+            
+        }
+
+        .pricing-card {
+            flex: 1; /* Equal width for all cards */
+            background-color: #777eb2;
+            border-radius: 20px;
+            padding: 20px;
+            color: #fff;
+            font-size: 18px;
+            margin-right: 20px;
+            margin-left: 60px;
+        }
+
+        .pricing-card h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #2C2C54;
+        }
+
+        .pricing-card p {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .pricing-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            margin-bottom: 10px;
+        }
+
+        .pricing-card li {
+            margin-bottom: 5%;
+        }
+
+        .pricing-card a {
+            display: inline-block;
+            background-color: #fff;
+            color: #2C2C54;
+            border: 1px solid #fff;
+            border-radius: 5px;
+            padding: 10px 20px;
+            text-decoration: none;
+        }
+
+ .contact-section {
+    height: 50%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px; /* Adjust as needed */
+    margin-bottom: 50px; /* Adjust as needed */
+    height: 400px;
+    
+}
+
+.contact-form {
+    flex: 1;
+    padding: 20px;
+    background-color: #2C2C54;
+    border-radius: 20px;
+    margin-left: 90px;
+    margin-right: 10%;
+}
+
+.contact-image {
+    flex: 1;
+    margin-right: -5%;
+    margin-top: -2%;
+}
+
+.contact-image img {
+    width: 50%;
+    height: 50%;
+    border-radius: 20px 20px 20px 20px;
+    margin-top: 2%;
+    margin-left: 25%;
+}
+
+
+
+
+.hero-section {
+  height: 100vh;
+  background-image: url("images/hero-img.jpg");
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  display: flex;
+  padding: 0 20px;
+  align-items: center;
+  background-color: #2C2C54;
+}
+.hero-section .content {
+  max-width: 1280px;
+  margin: 0 auto 40px;
+  width: 100%;
+}
+.hero-section .content h1 {
+  color: #fff;
+  font-size: 3rem;
+  max-width: 1000px;
+  line-height: 65px;
+  margin-top: 1px;
+}
+.hero-section .search-form {
+  height: 48px;
+  display: flex;
+  max-width: 630px;
+  margin-top: 30px;
+}
+.hero-section .search-form input {
+  height: 100%;
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 0 15px;
+  font-size: 1rem;
+  border-radius: 4px 0 0 4px;
+}
+.hero-section .search-form button {
+  height: 100%;
+  width: 60px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background: #777eb2;
+  color: #fff;
+  border-radius: 0 4px 4px 0;
+  transition: background 0.2s ease;
+}
+.hero-section .search-form button:hover {
+  background: white;
+  color: #2C2C54;
+}
+.hero-section .popular-tags {
+  display: flex;
+  color: #fff;
+  gap: 25px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-top: 25px;
+}
+.hero-section .popular-tags .tags {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  list-style: none;
+}
+.hero-section .tags li a {
+  text-decoration: none;
+  color: #fff;
+  border: 1px solid #fff;
+  padding: 4px 12px;
+  border-radius: 50px;
+  transition: 0.2s ease;
+}
+.hero-section .tags li a:hover {
+  color: #000;
+  background: #fff;
+}
+.navbar #hamburger-btn {
+  color: #fff;
+  cursor: pointer;
+  display: none;
+  font-size: 1.7rem;
+}
+.navbar #close-menu-btn {
+  position: absolute;
+  display: none;
+  color: #000;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+  font-size: 1.7rem;
+}
+@media screen and (max-width: 900px) {
+  header.show-mobile-menu::before {
+    content: "";
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    backdrop-filter: blur(5px);
+  }
+  .navbar .menu-links {
+    height: 100vh;
+    max-width: 300px;
+    width: 100%;
+    background: #fff;
+    position: fixed;
+    left: -300px;
+    top: 0;
+    display: block;
+    padding: 75px 40px 0;
+    transition: left 0.2s ease;
+  }
+  header.show-mobile-menu .navbar .menu-links {
+    left: 0;
+  }
+  .navbar .menu-links li {
+    margin-bottom: 30px;
+  }
+  .navbar .menu-links li a {
+    color: #000;
+    font-size: 1.1rem;
+  }
+  .navbar .menu-links .join-btn a {
+    padding: 0;
+  }
+  .navbar .menu-links .join-btn a:hover {
+    color: #777eb2;
+    background: none;
+  }
+  .navbar :is(#close-menu-btn, #hamburger-btn) {
+    display: block;
+  }
+  .hero-section {
+    background: none;
+  }
+  .hero-section .content {
+    margin: 0 auto 80px;
+  }
+  .hero-section .content :is(h1, .search-form) {
+    max-width: 100%;
+  }
+  .hero-section .content h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    line-height: 55px;
+  }
+  .hero-section .search-form {
+    display: block;
+    margin-top: 20px;
+  }
+  .hero-section .search-form input {
+    border-radius: 4px;
+  }
+  
+  .hero-section .search-form button {
+    margin-top: 10px;
+    border-radius: 4px;
+    width: 100%;
+  }
+  .hero-section .popular-tags {
+    display: none;
+  }
+}
+
+    </style>
+</head>
+<body>
+    <div class="header1" style="background-color: #2C2C54; border-radius: 20px 20px 0px 0px">
+    <div class="header" style=" border-radius: 20px 20px 20px 20px">
+    <h2>The Pricifiers</h2>
+    <div class="collapse navbar-collapse" id="navbarColor01">
+        <ul class="navbar-nav me-auto">
+            <li class="nav-item" >
+                <a class="nav-link active" href="/users/dashboard" style="color: white;">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/users/template1" style="color: white;">Features</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/users/pricing" style="color: white;">Plans</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/users/about" style="color: white;">About</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/register" style="color: white;">Account</a>
+            </li>
+        </ul>
+    </div>
+</div>
+</div>
+
+
+
+
+
+   {{!-- <div class="main">
+
+
+        <section id="home">
+        <div class="home-left">
+            <img src="https://imageio.forbes.com/specials-images/imageserve/6427135d73be3278358cd6f3/Business-Investment-analysis-Account-and-accounting-Concept-Business-Investment/960x0.jpg?height=474&width=711&fit=bounds" alt="">
+        </div>
+        <div class="home-right">
+            <h2 class="home-heading" style="color: #a2a8d3;"> Customize Your Templates Here </h2>
+            <p class="home-para">Elevate Your Pricing Strategy from Puzzle to Powerhouse: Unleash the Potential 
+                of Streamlined Pricing Page Management!</p>
+            <a href="" class="btn"> Our Work</a>
+        </div>
+    </section>
+    <!--================== Home Section Ends Here -->
+
+   <div class="pricing-container">
+        <div class="pricing-card">
+            <h2>Basic Plan</h2>
+            <p>$19.99 per month</p>
+            <ul>
+                <li>5 Users</li>
+                <li>10 Projects</li>
+                <li>Basic Support</li>
+            </ul>
+            <a href="#">Get Started</a>
+        </div>
+
+        <div class="pricing-card">
+            <h2>Premium Plan</h2>
+            <p>$39.99 per month</p>
+            <ul>
+                <li>15 Users</li>
+                <li>Unlimited Projects</li>
+                <li>Premium Support</li>
+            </ul>
+            <a href="#">Get Started</a>
+        </div>
+
+        <div class="pricing-card">
+            <h2>Advance Plan</h2>
+            <p>$99.99 per month</p>
+            <ul>
+                <li>30 Users</li>
+                <li>Unlimited Projects</li>
+                <li>Premium Support</li>
+            
+            </ul>
+            <a href="#">Get Started</a>
+        </div>
+         <div class="pricing-card">
+            <h2>Enterprise Plan</h2>
+            <p>$149.99 per month</p>
+            <ul>
+                <li>Unlimited Users</li>
+                <li>Unlimited Projects</li>
+                <li>Premium Support</li>
+            
+            </ul>
+            <a href="#">Get Started</a>
+        </div>
+    </div>
+
+    
+    </section>
+<div class="contact-section">
+    <div class="contact-form">
+    <h2 style="color:#2C2C54; text-align:center">Contact Us</h2>
+    <form id="contact-form" method="post" action="contact.php">
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+            <label style="margin: 10px;" for="message">Your Message</label>
+            <textarea style="padding:2px; border-radius:5px; width:98%" id="message" name="message" rows="4" required></textarea>
+        </div>
+        <button style="border: none; padding:10px; border-radius:5px; background-color:#2C2C54; color:white" type="submit">Submit</button>
+    </form>
+</div>
+    
+    <div class="contact-image">
+        <p style="margin-left:20%; font-weight:bold; font-size:30px; color: #a2a8d3; font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif">Contact Us Here</p>
+        <p style="margin-left:0%; text-align:justify; margin-right:25%; font-size:15px; color: #ffffff; font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif">
+            Connect with us, let's make magic happen!
+            We value your feedback, inquiries, and suggestions. Whether you have questions about our products, services, partnerships, or simply want to say hello, we're here to assist you.
+
+Please feel free to reach out to us via the contact form below or through our direct contact information provided. Our team strives to respond to all inquiries promptly and efficiently. 
+Thank you for choosing to connect with us!
+            </p>
+         </div>
+</div> --}}
+
+
+
+
+
+
+<section class="hero-section" style="border-radius: 0px; 0px; 0px; 0px;">
+    <div class="content">
+      <h1>Elevate Your Pricing Strategy from Puzzle to Powerhouse: Unleash the Potential 
+                of Streamlined Pricing Page Management!</h1>
+      <form action="#" class="search-form">
+        <input type="text" placeholder="Search for any service..." required>
+        <button class="material-symbols-outlined" type="sumbit">search</button>
+      </form>
+      <div class="popular-tags">
+        
+        <ul class="tags">
+            Popular:
+          <li><a href="#">Customization Plans</a></li>
+          <li><a href="#">Template Customization</a></li>
+          <li><a href="#">Code Generation</a></li>
+          <li><a href="#">Payment</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+
+  <div class="pricing-container">
+        <div class="pricing-card">
+            <h2>Basic Plan</h2>
+            <p>$19.99 per month</p>
+            <ul>
+                <li>5 Users</li>
+                <li>10 Projects</li>
+                <li>Basic Support</li>
+            </ul>
+            <a href="#">Get Started</a>
+        </div>
+
+        <div class="pricing-card">
+            <h2>Premium Plan</h2>
+            <p>$39.99 per month</p>
+            <ul>
+                <li>15 Users</li>
+                <li>Unlimited Projects</li>
+                <li>Premium Support</li>
+            </ul>
+            <a href="#">Get Started</a>
+        </div>
+
+        <div class="pricing-card">
+            <h2>Advance Plan</h2>
+            <p>$99.99 per month</p>
+            <ul>
+                <li>30 Users</li>
+                <li>Unlimited Projects</li>
+                <li>Premium Support</li>
+            
+            </ul>
+            <a href="#">Get Started</a>
+        </div>
+         <div class="pricing-card">
+            <h2>Enterprise Plan</h2>
+            <p>$149.99 per month</p>
+            <ul>
+                <li>Unlimited Users</li>
+                <li>Unlimited Projects</li>
+                <li>Premium Support</li>
+            
+            </ul>
+            <a href="#">Get Started</a>
+        </div>
+    </div>
+
+
+
+    <div class="contact-section" style="background-color: #2C2C54; border-radius:20px">
+    <div class="contact-form">
+    <h2 style="color:#2C2C54; text-align:center">Contact Us</h2>
+    <form id="contact-form" method="post" action="contact.php">
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required style="width:70%; border-radius:5px; height: 40px;">
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required style="width:70%; border-radius:5px; height: 40px;">
+        </div>
+        <div class="form-group">
+            <label style="margin: 10px;" for="message">Your Message</label>
+            <textarea id="message" name="message" rows="4" required style="padding:2px; border-radius:5px; width:69%"></textarea>
+        </div>
+        <button style="border: none; padding:10px; border-radius:5px; background-color:#777eb2; color:white" type="submit">Submit</button>
+    </form>
+</div>
+    
+    <div class="contact-image">
+        <p style="margin-left:20%; font-weight:bold; font-size:30px; color: #a2a8d3; font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif">Contact Us Here</p>
+        <p style="margin-left:0%; text-align:justify; margin-right:25%; font-size:15px; color: #ffffff; font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif">
+            Connect with us, let's make magic happen!
+            We value your feedback, inquiries, and suggestions. Whether you have questions about our products, services, partnerships, or simply want to say hello, we're here to assist you.
+
+Please feel free to reach out to us via the contact form below or through our direct contact information provided. Our team strives to respond to all inquiries promptly and efficiently. 
+Thank you for choosing to connect with us!
+            </p>
+         </div>
+    </div>
+
+    <!-- JS -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+<!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>

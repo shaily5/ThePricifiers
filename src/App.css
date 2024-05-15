@@ -1,0 +1,348 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300');
+
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: white;
+}
+
+
+.addimage{
+  position: absolute;
+  margin-top: 80%;
+  right: 18px;
+}
+
+/* Sidebar.css */
+.sidebar {
+  position: relative;
+  height: 100vh;
+  border-right: 1px solid #ccc;
+}
+
+.subheader {
+  padding: 10px;
+  font-size: 16px;
+
+  background-color: #a2a8d3;
+  cursor: pointer; /* Add cursor pointer for better UX */
+}
+
+
+.options {
+  padding: 10px;
+  background-color: #AAABB8;
+}
+
+.options label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.options input {
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+
+
+.customize{
+  text-align: center;
+  font-weight: bold;
+  color: #2C2C54;
+}
+
+
+
+/* .col-sm-2{
+  width: 20%;
+} */
+
+.col-sm-10{
+  width: 65%;
+  padding-left: 25px;
+}
+
+/* App.css */
+
+.subheader-options{
+  font-size: 16px;
+  color: #090d54;
+
+}
+
+/* CSS for font size button */
+.font-size-button {
+  background-color: #228BFF; /* Blue background */
+  color: #fff; /* White text */
+  padding: 10px 20px; /* Padding */
+  border: none; /* No border */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Cursor on hover */
+  margin-right: 10px; /* Margin to separate from other buttons */
+}
+.navbar{
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* CSS for content buttons */
+.content-button {
+  font-weight: bold;
+  background-color: #a2a8d3; /* Green background */
+  color: #2C2C54; /* White text */
+  padding: 10px 15px; /* Padding */
+  border: none; /* No border */
+  border-radius: 0px 0px 0px 0px; /* Rounded corners */
+  cursor: pointer; /* Cursor on hover */
+  margin-right: 0px; /* Margin to separate from other buttons */
+}
+
+/* Add hover effect */
+.content-button:hover,
+.font-size-button:hover {
+  color: rgb(96, 96, 96); /* Reduce opacity on hover */
+}
+
+
+.header {
+  
+  color: #fff; /* Change text color as needed */
+  padding: 20px; /* Adjust padding as needed */
+  text-align: center; /* Center align text */
+}
+
+.subheader {
+  
+  color: #fff; /* Change text color as needed */
+  padding: 10px; /* Adjust padding as needed */
+  text-align: left; /* Align text to the left */
+}
+
+.header h1,
+.subheader h1 {
+  margin: 0; /* Remove default margin */
+}
+
+/* Add any additional styling for the subheader here */
+.subheader-content {
+  font-size: 8px; /* Change font size to 8px */
+
+}
+
+/* App.css */
+.navbar {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  align-self: start;
+  flex-direction: row;
+  background-color: #ffffff;
+  color: #2C2C54; /* Set header text color to white */
+  align-items: center;
+}
+
+
+
+/* App.css */
+.navbar-brand {
+ font-size: 30px;
+ font-family: system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Open Sans, Helvetica Neue, sans-serif;
+  margin-left: 40px;
+  color: #2C2C54;
+}
+
+.navbar nav{
+    display: flex;
+    list-style: none;
+   
+}
+
+.navbar nav li {
+ 
+  padding: 5px 10px;
+}
+
+.navbar nav li:hover {
+  color: rgb(96, 96, 96);
+}
+
+.subheader {
+  padding: 10px; /* Add padding to subheader */
+  text-align: left; /* Align text to the left in subheader */
+  font-size: 8px; /* Set font size of subheader text to 8px */
+}
+
+
+
+.nav {
+  list-style-type: none;
+  padding: 0;
+}
+
+.nav-item {
+  margin-bottom: 10px;
+  padding: 5px; /* Add padding between navbar items */
+  margin-left: 10px;
+  text-transform: none;
+}
+
+
+
+.nav-item:hover {
+  color: #8297ff;
+}
+
+button {
+  background-color: #2C2C54; 
+  color: white; 
+  padding: 10px 10px; 
+  border: none; 
+  border-radius: 10px; 
+  cursor: pointer; 
+  margin-right: 40px;
+}
+
+
+
+
+.pricing-card {
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 10px 10px 0 10px;
+  text-align: center;
+}
+
+.pricing-card h2 {
+  margin-bottom: 10px;
+  font-size: 16px;
+  color: #333;
+}
+
+.pricing-card h3 {
+  font-size: 16px;
+  color: #228BFF;
+  margin-bottom: 15px;
+}
+
+.pricing-card ul {
+  list-style-type: none;
+  padding: 0;
+  text-align: left; /* Align features to the left */
+}
+
+.pricing-card ul li {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 5px;
+}
+
+.navbar, header {
+  text-align: center;
+  align-items: center;
+}
+
+.navbar .btns {
+  background-color: #2C2C54;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  align-items: center;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  border-radius: 8px;
+  margin-right: 10px;
+
+}
+
+
+.pricing-card input[type="text"] {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 5px 10px;
+  margin-bottom: 10px;
+  width: 100%;
+  font-size: 16px;
+  transition: border-color 0.3s;
+}
+
+.pricing-card input[type="text"]:focus {
+  outline: none;
+  border-color: #228BFF;
+}
+
+.pricing-card button {
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  background-color: white;
+  color: black;
+  font-size: 12px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.pricing-card button:hover {
+  color: rgb(96, 96, 96);
+}
+
+.pricing-card .features {
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+}
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.container-fluid {
+  background-color: #2C2C54;
+  margin-bottom: 40px;
+  margin-right: 40px;
+  border-radius: 0px 20px 20px 0px;
+}
+
+
+/* .container{
+  margin-top: 7%;
+} */
+
+
+.section {
+  width: 100%;
+  height: 100vh;
+  padding: 60px 0 0 0;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+  margin-left: 5%;
+}
+
+.col-sm-4 {
+ 
+  margin-bottom: 40px;
+
+  margin-left: 30px;
+  width: 700px;
+  margin-top: 20px;
+}
+
+.col-sm-2{
+  width: 16%;
+  margin-bottom: 40px;
+  border-radius: 20px 0px 0px 20px;
+}
+
+
+
+.template {
+  margin-top: 20px;
+}

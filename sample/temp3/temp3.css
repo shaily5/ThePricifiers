@@ -1,0 +1,87 @@
+:root{ --main-color: #1c7531; }
+.pricingTable{
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
+    margin: 0 0 18px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.4);
+    padding-top: 10%;
+}
+.pricingTable .pricingTable-header{
+    color: #fff;
+    background: linear-gradient(var(--main-color),#0f1d3d,#0f1d3d);
+    padding: 60px 30px;
+}
+.pricingTable .title{
+    font-size: 45px;
+    font-weight: 400;
+    text-transform: capitalize;
+    margin: 0;
+}
+.pricingTable .price-value{
+    color: #fff;
+    background-color: var(--main-color);
+    font-size: 25px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: capitalize;
+    padding: 10px 30px 12px;
+    margin: 0 auto 30px;
+    display: inline-block;
+}
+.pricingTable .pricing-content{
+    padding: 0;
+    margin: 0 0 20px;
+    list-style: none;
+    display: inline-block;
+}
+.pricingTable .pricing-content li{
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 35px;
+    text-align: left;
+    letter-spacing: .5px;
+    padding: 0 0 0 28px;
+    margin: 0 0 7px;
+    position: relative;
+}
+.pricingTable .pricing-content li:last-child{ margin: 0; }
+.pricingTable .pricing-content li:before{
+    content: "\f00c";
+    color: #349008;
+    font-family: "Font Awesome 5 free";
+    font-size: 15px;
+    font-weight: 900;
+    position: absolute;
+    top: 2px;
+    left: 0;
+}
+.pricingTable .pricing-content li.disable:before{
+    content: "\f00d";
+    color: #FF3A3F;
+}
+.pricingTable .pricingTable-signup a{
+    color: #fff;
+    background: #0f1d3d;
+    font-size: 17px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: capitalize;
+    padding: 7px 30px 8px;
+    transform: translateY(18px);
+    display: inline-block;
+    transition: all 0.3s ease-in-out;
+}
+.pricingTable .pricingTable-signup a:hover{
+    color: #fff;
+    background-color: var(--main-color);
+}
+.pricingTable.orange{ --main-color: #dd6122; }
+.pricingTable.blue{ --main-color: #1e417e; }
+@media only screen and (max-width: 990px){
+    .pricingTable{ margin: 0 0 40px; }
+}
+div.row::before{
+    display: table;
+    content: " ";
+    padding: 5%;
+}

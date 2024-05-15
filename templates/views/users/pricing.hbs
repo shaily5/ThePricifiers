@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>The Pricifiers</title>
+
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="../css/style.css">
+    {{!-- <link rel="stylesheet" href="../css/bootstrap.css"> --}}
+
+    <style>
+      .navbar {
+            background-color: white; /* Set background color to white */
+            color: #2C2C54; /* Set font color to #2C2C54 */
+            justify-content: flex-end; /* Align items to the right */
+            margin-right: 5px;
+            display: flex; /* Use flexbox */
+            font-size: 15px;
+            font-weight: bold;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        .navbar-toggler {
+            order: -1; /* Move the toggler to the left side */
+        }
+
+        .navbar-nav {
+            display: flex; /* Use flexbox */
+            list-style: none; /* Remove default list styles */
+        }
+
+        .navbar-nav .nav-item {
+            margin-right: 15px; /* Add space between navigation items */
+        }
+
+        .navbar-nav .nav-link {
+            padding-right: 20px; /* Add right padding to each navigation link */
+            text-decoration: none;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            margin-left: 5%;
+            margin-right: auto;
+        }
+
+        .header h2 {
+            color: #2C2C54;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        .container {
+    display: flex;
+}
+
+.image-container {
+    flex: 1;
+    margin-left: -30%;
+}
+
+.image-container img {
+    max-width: 100%;
+    height: auto;
+}
+
+.content {
+    flex: 2;
+    background-color: #2C2C54;
+    color: #fff;
+    padding: 20px;
+    margin-right: -25%;
+    border-radius: 20px 20px 20px 20px;
+}
+
+
+        .navbar-collapse {
+    margin-left: 50%;
+    font-weight: 550;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 16px;
+}
+      .pricingTable{
+    color: #fff;
+    font-family: 'Outfit', sans-serif;
+    text-align: center;
+    padding: 35px 35px;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 0 10px rgba(0,0,0,0.25);
+}
+.pricingTable:before{
+    content: '';
+    background-color: #054982;
+    box-shadow: 0 0 10px rgba(0,0,0,0.25);
+    position: absolute;
+    left: 25px;
+    right: 25px;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+}
+.pricingTable .pricingTable-header{
+    text-align: left;
+    margin: 0 0 10px;
+}
+.pricingTable .title{
+    font-size: 40px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    line-height: 40px;
+    text-align: center;
+    text-transform: capitalize;
+    margin: 0;
+}
+.pricingTable .price-value{
+    color: #054982;
+    background-color: #fff;
+    text-align: center;
+    padding: 50px 90px 50px 0;
+    margin: 0 0 0 -20px;
+    display: inline-block;
+    clip-path: polygon(0 0, 100% 50%, 0 100%);
+}
+.pricingTable .price-value .amount{
+    font-size: 40px;
+    font-weight: 300;
+    line-height: 40px;
+    display: block;
+}
+.pricingTable .price-value .duration{
+    font-size: 15px;
+    text-transform: capitalize;
+    display: block;
+}
+.pricingTable .pricing-content{
+    text-align: left;
+    padding: 0;
+    margin: 0 0 30px;
+    list-style: none;
+    display: inline-block;
+}
+.pricingTable .pricing-content li{
+    font-size: 17px;
+    line-height: 25px;
+    text-transform: capitalize;
+    padding: 0 0 0 20px;
+    margin: 0 0 18px;
+    position: relative;
+}
+.pricingTable .pricing-content li:last-child{ margin: 0; }
+.pricingTable .pricing-content li:before{
+    content: "\f00c";
+    color: #59af23;
+    font-family: "Font Awesome 5 free";
+    font-size: 14px;
+    font-weight: 900;
+    position: absolute;
+    top: 1px;
+    left: 0;
+}
+.pricingTable .pricing-content li.disable:before{
+    content: "\f00d";
+    color: #DD434E;
+}
+.pricingTable .pricingTable-signup a{
+    color: #004b86;
+    background: #fff;
+    font-size: 17px;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 8px 25px;
+    border-radius: 5px;
+    transition: all 0.3s;
+}
+.pricingTable .pricingTable-signup a:hover{ text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.6); }
+.pricingTable.darkblue:before{ background-color: #02153e; }
+.pricingTable.darkblue .price-value,
+.pricingTable.darkblue .pricingTable-signup a{
+    color: #02153e;
+}
+.pricingTable.gray:before{ background-color: #262626; }
+.pricingTable.gray .price-value,
+.pricingTable.gray .pricingTable-signup a{
+    color: #262626;
+}
+@media only screen and (max-width: 990px){
+    .pricingTable{ margin: 0 10px 40px; }
+}
+div.container::before{
+    display: table;
+    content: " ";
+	padding: 5%;
+}
+
+.main{
+  width: 95%;
+  margin-left: 3%;
+  margin-top: 1%;
+}
+
+ .right-panel {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        background-color: #2C2C54;
+        border-radius: 0px 20px 20px 0px;
+    }
+    .pricing-table {
+        border: 1px solid #2C2C54;
+        border-radius: 20px;
+        padding: 20px;
+        text-align: center;
+        width: 270px;
+        height: 550px;
+        margin-top: -10%;
+        color: #2C2C54;
+        background-color: white;
+        margin-top: 5px;
+        margin-left: 30px;
+    }
+
+
+    .pricing-table h2:hover {
+        text-decoration: underline;
+    }
+  .pricing-table img {
+        width: 150px;
+        height: 150px;
+        border-radius: 10px;
+        margin-bottom: 10px;
+    }
+    .centered-button {
+        margin: 10px 30px;
+        margin-right: 20px;
+    }
+
+    .editable {
+        cursor: text;
+        border-bottom: 1px dashed #ccc; /* Add a dashed border to indicate the editable area */
+    }
+
+    .editable:hover {
+        background-color: #f9f9f9; /* Change background color on hover */
+    }
+
+    .icon-text-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 15px;
+            border-bottom: 1px dashed #ccc; /* Add a dashed border to indicate the editable area */
+
+        }
+  .icon-text-icon i {
+            margin-right: 10px;
+        }
+        .centered-button{
+    border:none; 
+    border-radius: 5px; 
+    padding: 5px 5px 5px 5px; 
+    color:white; 
+    background-color:#2C2C54;
+    width: 100px;
+    height: 40px;
+    font-weight: bold;
+}
+.pricing-table h2{
+  color: #2C2C54;
+  font-size: 25px;
+}
+.pricing-table p{
+  color: #2C2C54;
+  margin-bottom: 10px;
+  font-size: 30px;
+  
+}
+    </style>
+
+</head>
+<body>
+        <div class="header">
+    <h2 style="font-size: 30px; margin-right:50px">The Pricifiers</h2>
+    <div class="collapse navbar-collapse" id="navbarColor01">
+        <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+                <a class="nav-link active" href="/users/dashboard">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/users/template1">Features</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/users/pricing">Plans</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/users/about">About</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/register">Account</a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+
+    <div class="main">
+
+        {{!-- <h1> Pricing Page coming Soon</h1> --}}
+
+        <div class="right-panel">
+        <div class="pricing-table" id="pricing-table-1">
+            <img src="https://as1.ftcdn.net/v2/jpg/02/59/49/00/1000_F_259490093_wt2P7lVqDAW1IOvEbFpCmzNkro45aqwM.jpg" alt="Product Image">
+            <h2>FREE</h2>
+            <p>$0/month</p>
+           <div class="icon-text-icon">
+                <span contenteditable="true">Unlimited Websites</span>
+            </div>
+           <div class="icon-text-icon">
+                <span contenteditable="true">100 views</span>
+            </div>
+            <div class="icon-text-icon">
+                <span contenteditable="true">1 widget</span>
+            </div>
+            <div class="icon-text-icon">
+                <span contenteditable="true">No Projects</span>
+            </div>
+            <div class="icon-text-icon">
+                <span contenteditable="true">Only Bug Fixes</span>
+            </div>
+            {{!-- <button class="add-feature">+</button> <!-- Button to add a new editable paragraph --> --}}
+           <form action="http://localhost:9000/create-checkout-session/0">
+                <button type="submit" class="centered-button">Buy Now</button>
+            </form>
+        </div>
+        <div class="pricing-table" id="pricing-table-2">
+            <img src="https://as1.ftcdn.net/v2/jpg/02/59/49/00/1000_F_259490093_wt2P7lVqDAW1IOvEbFpCmzNkro45aqwM.jpg" alt="Product Image">
+            <h2>BASIC</h2>
+            <p>$5/month</p>
+           <div class="icon-text-icon">
+                <span contenteditable="true">Unlimited Websites</span>
+            </div>
+            <div class="icon-text-icon">
+                <span contenteditable="true">500 views</span>
+            </div>
+          <div class="icon-text-icon">
+                <span contenteditable="true">3 widgets</span>
+            </div>  
+            <div class="icon-text-icon">
+                <span contenteditable="true">No Projects</span>
+            </div>
+            <div class="icon-text-icon">
+                <span contenteditable="true">Basic Support</span>
+            </div>
+            {{!-- <button class="add-feature">+</button> <!-- Button to add a new editable paragraph --> --}}
+             <form action="http://localhost:9000/create-checkout-session/5">
+                <button type="submit" class="centered-button">Buy Now</button>
+            </form>
+        </div>
+        
+        <div class="pricing-table" id="pricing-table-3">
+            <img src="https://as1.ftcdn.net/v2/jpg/02/59/49/00/1000_F_259490093_wt2P7lVqDAW1IOvEbFpCmzNkro45aqwM.jpg" alt="Product Image">
+            <h2>ADVANCE</h2>
+            <p>$10/month</p>
+           <div class="icon-text-icon">
+                <span contenteditable="true">Unlimited Websites</span>
+            </div>
+           <div class="icon-text-icon">
+                <span contenteditable="true">5000 views</span>
+            </div>
+           <div class="icon-text-icon">
+                <span contenteditable="true">10 widgets</span>
+            </div> 
+            <div class="icon-text-icon">
+                <span contenteditable="true">3 Projects</span>
+            </div>
+            <div class="icon-text-icon">
+                <span contenteditable="true">Priority Support</span>
+            </div>
+            {{!-- <button class="add-feature">+</button> <!-- Button to add a new editable paragraph --> --}}
+            <form action="http://localhost:9000/create-checkout-session/10">
+                <button type="submit" class="centered-button">Buy Now</button>
+            </form>
+        </div>
+        <div class="pricing-table" id="pricing-table-1">
+            <img src="https://as1.ftcdn.net/v2/jpg/02/59/49/00/1000_F_259490093_wt2P7lVqDAW1IOvEbFpCmzNkro45aqwM.jpg" alt="Product Image">
+            <h2>PREMIUM</h2>
+            <p>$20/month</p>
+           <div class="icon-text-icon">
+                <span contenteditable="true">Unlimited Websites</span>
+            </div>
+           <div class="icon-text-icon">
+                <span contenteditable="true">20,000 views</span>
+            </div>
+            <div class="icon-text-icon">
+                <span contenteditable="true">20 widgets</span>
+            </div>
+            <div class="icon-text-icon">
+                <span contenteditable="true">7 Projects</span>
+            </div>
+            <div class="icon-text-icon">
+                <span contenteditable="true">Priority Support and Live Chat</span>
+            </div>
+            {{!-- <button class="add-feature">+</button> <!-- Button to add a new editable paragraph --> --}}
+            <form action="http://localhost:9000/create-checkout-session/15">
+                <button type="submit" class="centered-button">Buy Now</button>
+            </form>
+        </div>
+    </div>
+</div>
+    <!-- JS -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>

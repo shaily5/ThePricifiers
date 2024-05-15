@@ -1,0 +1,128 @@
+/* temp1.css */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  /* background: #005AA7;
+  background: -webkit-linear-gradient(to right, #FFFDE4, #005AA7);
+  background: linear-gradient(to right, #FFFDE4, #005AA7); */
+}
+
+
+.pricing-card {
+  background-color: #fff;
+  border-radius: 20px; /* Adjust the border radius as needed */
+  border: 1px solid black; /* Set border color to black */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+
+/* temp1.css */
+
+/* Add styles for the font style buttons */
+.style-button {
+background-color: #fff;
+border: 1px solid #ccc;
+border-radius: 3px;
+color: #000;
+cursor: pointer;
+font-size: 16px;
+margin-right: 5px;
+padding: 5px 10px;
+transition: background-color 0.3s, color 0.3s;
+}
+
+/* Add styles for the active font style buttons */
+.style-button.active {
+background-color: #ccc;
+color: #fff;
+}
+
+/* Adjust the Done button */
+.done-button {
+background-color: #2b2b46;
+border: none;
+border-radius: 5px;
+color: #fff;
+cursor: pointer;
+font-size: 16px;
+margin-top: 20px;
+padding: 10px 20px;
+transition: background-color 0.3s, color 0.3s;
+}
+
+.done-button:hover {
+background-color: #555072;
+}
+
+
+.bm-burger-button {
+  position: fixed;
+  width: 36px;
+  height: 30px;
+  left: 50px;
+  top: 50px;
+}
+
+/* Color/shape of burger icon bars */
+.bm-burger-bars {
+  background: #000000;
+}
+
+/* Color/shape of burger icon bars on hover*/
+.bm-burger-bars-hover {
+  background: #656565;
+}
+
+/* Position and sizing of clickable cross button */
+.bm-cross-button {
+  height: 24px;
+  width: 24px;
+  margin-right: 0px; /* Increase the margin-right value */
+}
+
+/* Color/shape of close button cross */
+.bm-cross {
+  background: #0a0a0a;
+}
+
+.bm-menu {
+  height: 70%;
+  background-color: rgb(255, 255, 255);
+  font-size: 1.15em;
+  width: 130%;
+}
+
+.bm-item-list {
+  padding: 0.8em;
+}
+
+.bm-item {
+  display: inline-block;
+  color: #000000;
+  margin-bottom: 10px;
+  text-align: left;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.bm-overlay {
+  background: none !important;
+}
+
+.bm-menu-wrap {
+  position: absolute;
+  left: 10px;
+  top: 0;
+  z-index: 1;
+  height: 100%;
+  transition: all 0.5s ease 0s;
+  width: auto;
+}

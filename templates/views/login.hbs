@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sign In</title>
+
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="css/style.css">
+    {{!-- <link rel="stylesheet" href="css/bootstrap.css"> --}}
+    
+    <style>
+      /* Add this CSS to your existing stylesheet or create a new one */
+/* Add this CSS to your existing stylesheet or create a new one */
+.navbar {
+  background-color: white; /* Set background color to white */
+  color: #2C2C54; /* Set font color to #2C2C54 */
+  display: flex; /* Use flexbox */
+  justify-content: flex-end; /* Align items to the right */
+  margin-right: 35px;
+  font-size: 15px;
+  font-weight: bold;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.navbar-toggler {
+  order: -1; /* Move the toggler to the left side */
+}
+
+.navbar-nav {
+  display: flex; /* Use flexbox */
+  list-style: none; /* Remove default list styles */
+}
+
+.navbar-nav .nav-item {
+  margin-right: 15px; /* Add space between navigation items */
+}
+
+
+.navbar-nav .nav-link {
+  padding-right: 20px; /* Add right padding to each navigation link */
+  text-decoration: none;
+}
+
+    </style>
+
+</head>
+<body>
+<nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
+    <h2 style="color: #2C2C54; margin-right:50%; font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">
+      The Pricifiers</h2>
+  <div class="container-fluid">
+    
+    <div class="collapse navbar-collapse" id="navbarColor01">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/users/dashboard">Home
+            {{!-- <span class="visually-hidden">(current)</span> --}}
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/users/template1">Features</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/users/pricing">Plans</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/users/about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="/register">Account</a>
+        </li>
+        {{!-- <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <a class="dropdown-item" href="#">Something else here</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Separated link</a>
+          </div>
+        </li> --}}
+      </ul>
+      {{!-- <form class="d-flex">
+        <input class="form-control me-sm-2" type="search" placeholder="Search">
+        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+      </form> --}}
+    </div>
+  </div>
+</nav>
+
+    <div class="main">
+          {{#if message}}
+              <div class="alert alert-danger">
+                      {{message}}
+              </div>
+          {{/if}}
+
+          {{#if wrong_password}}
+              <div class="alert alert-danger">
+                      {{wrong_password}}
+              </div>
+          {{/if}}
+
+          {{#if user_not_found}}
+              <div class="alert alert-danger">
+                      {{user_not_found}}
+              </div>
+          {{/if}}
+               <!-- Sing in  Form -->
+        <section class="sign-in">
+            <div class="container">
+                <div class="signin-content">
+                    <div class="signin-image">
+                        <figure><img src="images/signin-image.jpg" alt="sing up image"></figure>
+                        <a href="/register" class="signup-image-link">Create an account</a>
+                    </div>
+
+                    <div class="signin-form">
+                        <h2 class="form-title">Sign In</h2>
+                        <form action="/users/login" method="post" class="register-form" id="login-form">
+                            <div class="form-group">
+                                <label for="your_name"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                                <input type="text" name="email" id="your_name" placeholder="Your Registered Email"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="your_pass"><i class="zmdi zmdi-lock"></i></label>
+                                <input type="password" name="password" id="your_pass" placeholder="Password"/>
+                            </div>
+                            <div class="form-group">
+                                <input type="checkbox" name="remember-me" id="remember-me" class="agree-term" />
+                                <label for="remember-me" class="label-agree-term"><span><span></span></span>Remember me</label>
+                            </div>
+                            <div class="form-group form-button">
+                                <input type="submit" name="signin" id="signin" class="form-submit" value="Log in"/>
+                            </div>
+                        </form>
+                        <div class="social-login">
+                            <span class="social-label">Or login with</span>
+                            <ul class="socials">
+                                {{!-- <li><a href="#"><i class="display-flex-center zmdi zmdi-facebook"></i></a></li>
+                                <li><a href="#"><i class="display-flex-center zmdi zmdi-twitter"></i></a></li> --}}
+                                <li><a href="https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Fmail.google.com%2Fmail%2Fu%2F0%2F&emr=1&followup=https%3A%2F%2Fmail.google.com%2Fmail%2Fu%2F0%2F&ifkv=ARZ0qKKAbxpvXiDPAUri9fzZGZmEfStLlbxxv1vn8msIXpG9tfdN1Ka2u7blHGUlfcbF669QqTCY&osid=1&passive=1209600&service=mail&flowName=GlifWebSignIn&flowEntry=ServiceLogin&dsh=S873214744%3A1712196701069797&theme=mn&ddm=0"><i class="display-flex-center zmdi zmdi-google"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+    </div>
+
+    <!-- JS -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>
